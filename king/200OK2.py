@@ -17,7 +17,7 @@ def check(domain):
         with open(filename, 'a') as file:
             file.write(domain + '\n')
 
-        print(f"has been save {domain} in {filename}.")
+        print(f"has been save{domain} in {filename}.")
     except requests.exceptions.RequestException:
         print(f"nor work {domain}.")
 
@@ -31,11 +31,12 @@ def process_domains(domains, num_threads):
     for thread in thread_pool:
         thread.join()
 
-output_path = 'sub_sub/2.txt'
+output_path = 'sub_sub/3.txt'
 
+# افتح ملف النطاقات
 with open(output_path, 'r') as file:
     domains = file.read().splitlines()
 
-num_threads = int(input("Enter the number of threads: "))
+num_threads = int(input("Enter the number of threads:"))
 process_domains(domains, num_threads)
 

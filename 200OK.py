@@ -19,7 +19,7 @@ def check(domain):
 
         print(f"has been save {domain} in {filename}.")
     except requests.exceptions.RequestException:
-        print(f"nor work {domain}.")
+        print(f" not work {domain}.")
 
 def process_domains(domains, num_threads):
     thread_pool = []
@@ -31,11 +31,10 @@ def process_domains(domains, num_threads):
     for thread in thread_pool:
         thread.join()
 
-output_path = 'sub_sub/2.txt'
+output_path = 'sub_sub/1.txt'
 
 with open(output_path, 'r') as file:
     domains = file.read().splitlines()
 
 num_threads = int(input("Enter the number of threads: "))
 process_domains(domains, num_threads)
-
